@@ -47,7 +47,9 @@
   </div>
   <br />
   <div>
-    <h1>Todo List</h1>
+    {#if todos.length > 1}
+      <h1>Todo List</h1>
+    {/if}
     <ol>
       {#each todos as todo, i}
         {#if i > 0}
