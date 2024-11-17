@@ -11,7 +11,7 @@
 
   const removeItem = (e) => {
     let id = e.target.value;
-    todos.splice(id, id);
+    todos.splice(id, 1);
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
@@ -24,7 +24,7 @@
   const handleDone = (e) => {
     let id = e.target.value;
     let itemToUpdate = JSON.parse(localStorage.getItem("todos"))[id];
-    todos.splice(id, id);
+    todos.splice(id, 1);
 
     let updatedItem = `${itemToUpdate} @true!`;
 
