@@ -15,16 +15,16 @@
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
-  const addItem = () => {
+  const addItem = (e) => {
+    e.preventDefault();
     todos.push(itemInput);
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
   const handleDone = (e) => {
     let id = e.target.value;
-    todos.splice(id, id);
-
     let itemToUpdate = JSON.parse(localStorage.getItem("todos"))[id];
+    todos.splice(id, id);
 
     let updatedItem = `${itemToUpdate} @true!`;
 
@@ -37,11 +37,13 @@
 <main class="container-fluid">
   <h1>Todo App</h1>
   <div id="inputDiv">
-    <input bind:value={itemInput} type="text" class="form-control" />
-    <br />
-    <div class="text-center">
-      <button class="btn btn-success" onclick={addItem}>Add</button>
-    </div>
+    <form action="submit" onsubmit={addItem}>
+      <input required bind:value={itemInput} type="text" class="form-control" />
+      <br />
+      <div class="text-center">
+        <button type="submit" class="btn btn-success">Add</button>
+      </div>
+    </form>
   </div>
   <br />
   <div>
