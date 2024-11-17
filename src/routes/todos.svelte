@@ -19,6 +19,7 @@
     e.preventDefault();
     todos.push(itemInput);
     localStorage.setItem("todos", JSON.stringify(todos));
+    itemInput = "";
   };
 
   const handleDone = (e) => {
