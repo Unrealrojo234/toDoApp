@@ -41,8 +41,10 @@
     <form action="submit" onsubmit={addItem}>
       <input required bind:value={itemInput} type="text" class="form-control" />
       <br />
-      <div class="text-center">
-        <button type="submit" class="btn btn-success">Add</button>
+      <div class="text-center d-grid">
+        <button type="submit" class="btn btn-success"
+          >Add <i class="fa-solid fa-circle-plus"></i></button
+        >
       </div>
     </form>
   </div>
@@ -59,7 +61,7 @@
               {todo.replace("@true!", "")}
               <div>
                 <button value={i} onclick={removeItem} class="btn btn-danger"
-                  >Remove</button
+                  >Remove <i class="fa-solid fa-trash-can"></i></button
                 >
               </div>
             </li>
@@ -69,10 +71,10 @@
 
               <div id="btns">
                 <button value={i} onclick={handleDone} class="btn btn-info"
-                  >Done</button
+                  >Done <i class="fa-solid fa-check"></i></button
                 >
                 <button value={i} onclick={removeItem} class="btn btn-danger"
-                  >Remove</button
+                  >Remove <i class="fa-solid fa-trash-can"></i></button
                 >
               </div>
             </li>
